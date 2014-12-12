@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>APA AESTHETIC DENTAL & COSMETIC CENTRE | LAB </title>
+	<link rel="stylesheet" href="css/styleNew.css">
+	<link rel="stylesheet" href="css/jquery.bxslider.css">
+	
+</head>
+<body>
+
+<div id="container">
+	
+	<div id="topNav">
+		<div id="headerLogo">
+			<div id="apaLogo"></div>
+		</div>
+		
+		<div id="headerSection">
+			<h1><a href="index.html">APA AESTHETIC DENTAL & COSMETIC CENTRE</a> </h1>
+		</div>
+
+		<div id="searchBox">
+			<img src="img/search.jpg" width="110">			
+		</div>
+
+		<div id="menu">
+			<ul id="nav">
+				<li><a href="index.html">ABOUT</a></li>
+				<li><a href="lab.html" class="selected">LAB</a></li>
+				<li><a href="index.html">SURGERY</a></li>
+				<li><a href="index.html">EXPANDED TREATMENT</a></li>
+				<li><a href="beforeAfter.html">BEFORE & AFTER</a></li>
+				<li><a href="press.html">PRESS</a></li>
+				<li><a href="index.html">CONTACT</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="content">
+		<h2 style="display:none">Tablet Setting</h2>
+
+		<div class="scrollCtrl">
+			<a class="prevB" style="display:none;"></a>
+			<a class="nextB"></a>
+		</div>
+
+		<div class="panel">
+			<div id="section01">
+				<div id="leftCube" class="cube">
+					<div class="imgCube cubeZoomOut Zoomed" style="background-image:url(img/lab/image1.jpg);"></div>
+				</div>
+				<div id="rightCube" class="cube">
+				 	<div id="info">
+						<h2>
+							THE MASTER CERAMIST: <br>
+							JASON J. KIM
+						</h2><br>
+						<p>
+							Jason J. Kim, CDT is the Founder and President of Jason J. Kim Dental<br>
+							Aesthetics and owns/operates the Oral Design Center in NYC. He lectures <br>
+							nationally and internationally and has written numerous articles and<br> 
+							co-authored books on esthetic restoration and team communication, <br>
+							including “Aesthetic Restorative Dentistry Principles and Practice”. <br>
+							He is also the sole author of “The Master Ceramist”. Mr. Kim is a member <br>
+							of the International Oral Design Foundation, Dental Laboratory Association <br>
+							of New York and the American Society for Dental Aesthetics. He is also<br> 
+							Clinical Assistant Professor at New York University College of Dentistry.<br><br>
+							In the hands of a master ceramist, dental restoration done in a lab <br>
+							is akin to a piece of art. Every detail is taken into consideration,<br>
+							in order to fulfill each patient’s needs and exceed their expectations.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div id="section02" style="background-image:url(img/lab/image2.jpg);">
+				<p>
+					A Master Ceramist combines technical skill and an aesthetic sensibility <br>
+					that sets apart the work of a dedicated artist from a tradesman, <br>
+					and the results exemplify the difference between a mere functional improvement <br>
+					and life-changing aesthetics.
+				</p>
+
+			</div>
+
+			<div id="section03">
+				<div id="leftCube" class="cube">
+					<div class="imgCube Zoomed" style="background-image:url(img/lab/image3.jpg);"></div>
+				</div>
+				<div id="rightCube" class="cube">
+				 	<div id="info">
+						<h2>
+							A PERFECT <br>
+							PARTNERSHIP
+						</h2><br>
+						<p>
+							Ensuring there is a balance between dental aesthetics and function is<br>
+							a collaborative effort between a clinician and a ceramist. Together<br> 
+							they rebuild each patient’s dental structure, additionally this prevents further<br> deterioration of teeth that occurs with aging. Defining the minimum <br>
+							amount of tooth reduction needed for an effective restoration is one of <br>
+							the main goals of this partnership. <br><br>
+
+							Pre-design planning includes: photo reference for color and design analysis,<br>
+							as well as condyle study for achieving comfortable chewing patterns and<br>
+							ending with a collaborative diagnosis. This involves determining ceramic color<br>
+							and tooth positioning, in order to be aesthetically pleasing and comfortable at<br>
+							the same time. This all occurs before clinical tooth preparation. All of these<br>
+							steps ensure a minimally invasive tooth reduction for the patient. Breakthrough<br> smile design with the added benefit of prolonging one’s dental health are<br> 
+							the results of a very successful partnership between Apa Aesthetic Dental & <br>Consmetic Centre and Jason J. Kim Oral Design New York Center.
+						</p>
+					</div>
+				</div>
+			</div>
+
+	</div>
+	<div id="footer">
+		<p>© APA AESTHETIC DENTAL & COSMETIC CENTRE 2015<span><img src="img/icons.jpg" width="100"></span></p>
+	</div>
+
+	<script src="js/jquery-1.11.1.min.js"></script>
+  	<script src="js/jquery-ui.min.js"></script>
+	
+	<script>
+			  $(document).ready(function(){
+
+			  	var topPos = $('#section01').position();
+			  	var midPos = $('#section02').position();
+
+			  	$('.nextB').on('click', function(){
+				   $('#content').animate({
+			        scrollTop: midPos.top}, {duration: 1000, complete:function () {
+			    			//$('#section03 #leftCube .imgCube').delay(800).queue(function() {
+							//     $(this).addClass('cubeZoomOut').dequeue();
+							// });
+			        	   $("#section03 #leftCube .imgCube").addClass('cubeZoomOut');
+			        	   $("#section01 #leftCube .imgCube").removeClass('cubeZoomOut');
+       			 		}}, "easeInOutCubic");
+				   $('.prevB').fadeIn();
+				   $('.nextB').hide();
+
+				});
+
+				$('.prevB').on('click', function(){
+					$('#content').animate({
+					scrollTop: topPos.top-189}, {duration: 1000, complete:function () {
+         				   $("#section03 #leftCube .imgCube").removeClass('cubeZoomOut');
+         				   $("#section01 #leftCube .imgCube").addClass('cubeZoomOut');
+       			 		}}, "easeInOutCubic");
+				   $('.nextB').fadeIn();
+				   $('.prevB').hide();
+				});
+			 });
+
+	</script>
+</div>
+	
+</body>
+</html>

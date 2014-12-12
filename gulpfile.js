@@ -10,10 +10,16 @@ var jsSources = [
 ];
 var sassSources = ['components/sass/style.scss'];
 
+
+gulp.task('watch', function() {
+    gulp.watch('js/*.js', ['js']);
+    gulp.watch('sass/*.scss', ['sass']);
+});
+
 gulp.task('js', function() {
   gulp.src(jsSources)
     .pipe(concat('script.js'))
-    // .pipe(browserify())
+    .pipe(browserify())
     .pipe(gulp.dest('builds/development/js'))
 });
 
@@ -21,7 +27,7 @@ gulp.task('compass', function() {
   gulp.src(sassSources)
     .pipe(compass({
       sass: 'components/sass',
-      image: 'builds/development/images',
+      image: 'builds/development/imgs',
       style: 'expanded'
     })
     .on('error', gutil.log))

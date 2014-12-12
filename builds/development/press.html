@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>APA AESTHETIC DENTAL & COSMETIC CENTRE | Press </title>
+	<link rel="stylesheet" href="css/styleNew.css">
+</head>
+<body>
+	<div id="container">
+	
+	<div id="topNav">
+		<div id="headerLogo">
+			<div id="apaLogo"></div>
+		</div>
+		
+		<div id="headerSection">
+			<h1><a href="index.html">APA AESTHETIC DENTAL & COSMETIC CENTRE</a> </h1>
+		</div>
+
+		<div id="searchBox">
+				
+		</div>
+
+		<div id="menu">
+			<ul id="nav">
+				<li><a href="index.html">ABOUT</a></li>
+				<li><a href="lab.html">LAB</a></li>
+				<li><a href="index.html">SURGERY</a></li>
+				<li><a href="index.html">EXPANDED TREATMENT</a></li>
+				<li><a href="beforeAfter.html">BEFORE & AFTER</a></li>
+				<li><a href="press.html" class="selected" >PRESS</a></li>
+				<li><a href="index.html">CONTACT</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="content" style="overflow-y:scroll;">
+		<div id="step01" class="press">
+			<img src="img/press/p1.jpg" width="100%">
+		</div>
+		<div id="step02" class="press">
+			<img src="img/press/p2.jpg" width="100%">
+		</div>
+		<div id="step03" class="press">
+			<img src="img/press/p3.jpg" width="100%">
+		</div>
+	</div>
+
+	<div id="footer">
+		<p>© APA AESTHETIC DENTAL & COSMETIC CENTRE 2015<span><img src="img/icons.jpg" width="100"></span></p>
+	</div>
+
+	<script src="js/jquery-1.11.1.min.js"></script>
+  	<script src="js/jquery-ui.min.js"></script>
+
+  	<script>
+  		$(document).ready(function(){
+  			$('#step01').click(function(){
+  				$('#step01').hide();
+  				$('#step02').show();
+  			});
+
+  			$('#step02').click(function(){
+  				$('#step02').hide();
+  				$('#step03').show();
+  			})
+
+  			$('#step03').click(function(){
+  				$('#step03').hide();
+  				$('#step01').show();
+  			})
+  		});
+
+  	</script>
+	
+</body>
+</html>

@@ -1,55 +1,304 @@
 // _base.scss
-// ==============
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
 body {
-  background: lighten($beige, 10%);
-  font-family: $bodyFont;
-  font-size: 1.1em;
+  line-height: 1;
 }
- 
-#content {
-  color: $pink;
-  font-size: 2em;
+ol, ul {
+  list-style: none;
 }
- 
-.container {
-  width: 90%;
-  max-width: 1000px;
-  margin: 0 auto;
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: 'DINReg';
+  src: url('font/DIN-Regular/DIN-Regular.eot');
+  src: local('sans-serif'), url("font/DIN-Regular/DIN-Regular.woff") format("woff"), url("font/DIN-Regular/DIN-Regular.otf") format("opentype"), url("font/DIN-Regular/DIN-Regular.svg") format("svg"), url("font/DIN-Regular/DIN-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'DINLig';
+  src: url('font/DIN-Light/DIN-Light.eot');
+  src: local('sans-serif'), url("font/DIN-Light/DIN-Light.woff") format("woff"), url("font/DIN-Light/DIN-Light.otf") format("opentype"), url("font/DIN-Light/DIN-Light.svg") format("svg"), url("font/DIN-Light/DIN-Light.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'DINMed';
+  src: url('font/DIN-Medium/DIN-Medium.eot');
+  src: local('sans-serif'), url("font/DIN-Medium/DIN-Medium.woff") format("woff"), url("font/DIN-Medium/DIN-Medium.otf") format("opentype"), url("font/DIN-Medium/DIN-Medium.svg") format("svg"), url("font/DIN-Medium/DIN-Medium.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'DINBol';
+  src: url('font/DIN/DIN-Bold.eot');
+  src: local('sans-serif'), url("font/DIN-Bold/DIN-Bold.woff") format("woff"), url("font/DIN-Bold/DIN-Bold.otf") format("opentype"), url("font/DIN-Bold/DIN-Bold.svg") format("svg"), url("font/DIN-Bold/DIN-Bold.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'DINBla';
+  src: url('font/DIN/DIN-Black.eot');
+  src: local('sans-serif'), url("font/DIN-Black/DIN-Black.woff") format("woff"), url("font/DIN-Black/DIN-Black.otf") format("opentype"), url("font/DIN-Black/DIN-Black.svg") format("svg"), url("font/DIN-Black/DIN-Black.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Didot-Italic';
+  src: url('font/Didot/Didot-Italic.eot');
+  src: local('sans-serif'), url("font/Didot/Didot-Italic.woff") format("woff"), url("font/Didot/Didot-Italic.otf") format("opentype"), url("font/Didot/Didot-Italic.svg") format("svg"), url("font/Didot/Didot-Italic.ttf") format("truetype");
+  font-weight: normal;
+}
+
+
+body {
+  overflow: hidden;
+  font-family: 'DINReg';
+  width: 100%;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.slideBg img {
+  transition: all 1s ease-in-out;
+  width: 100%;
+}
+.slideBg {
+  /*overflow: hidden;
+  background-position: center;
+  -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-size: 100%;
+    width: 100%; 
+    height: 100%; 
+*/
+}
+.first {
+  transition: all 1s ease-in-out;
+  -webkit-transform: scale(2, 2);
+  -moz-transform: scale(2, 2);
+  -ms-transform: scale(2, 2);
+  -o-transform: scale(2, 2);
+  transform: scale(2, 2);
+}
+.slideBg.second {
+
+}
+.second {
+  transition: all 1s ease-in-out;
+  -webkit-transform: scale(2.8, 2.8);
+  -moz-transform: scale(2.8, 2.8);
+  -ms-transform: scale(2.8, 2.8);
+  -o-transform: scale(2.8, 2.8);
+  transform: scale(2.8, 2.8);
+}
+.slideBg.thrid {
+  background-position: 0px 70px;
+}
+.thrid {
+  transition: all 1s ease-in-out;
+  -webkit-transform: scale(2.8, 2.8);
+  -moz-transform: scale(2.8, 2.8);
+  -ms-transform: scale(2.8, 2.8);
+  -o-transform: scale(2.8, 2.8);
+  transform: scale(2.8, 2.8);
+}
+.grow {
+  transition: all 1s ease-in-out;
+  background-size: 100%;
+  background-position: center;
+  -webkit-transform: scale(1.1, 1.1);
+  -moz-transform: scale(1.1, 1.1);
+  -ms-transform: scale(1.1, 1.1);
+  -o-transform: scale(1.1, 1.1);
+  transform: scale(1.1, 1.1);
+}
+.bxslider {
+  margin: 0;
+  padding: 0;
+}
+.bxslider li {
+
+}
+.slideWrapper {
   position: relative;
+  text-align: center;
+  overflow: hidden;
+  margin: 0;
 }
- 
-#{headings()} {
-  font-family: $headFont;
-  font-size: 3em;
+#headerLogo {
+  background-color: black;
+  text-align: center;
 }
- 
-h1 {
-  font-size: 3.5em;
+#headerSection {
+  display: block;
+  width: 100%;
+  height: 40px;
+  line-height: 45px;
+  background-color: white;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+#headerSection h1 {
+  font-size: 20px;
+  color: #000;
+  margin: 0;
+  font-weight: normal;
+}
+#searchBox{
+  position: absolute;
+  right: 10px;
+  margin-top: -40px;
+}
+
+#menu {
+  width: 100%;
+  background-color: white;
+}
+#topNav {
+  position: relative;
+  z-index: 999;
+}
+#nav {
+  display: block;
+  width: 100%;
+  height: 20px;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+#nav li {
+  display: inline-block;
+  font-size: 13px;
+  color: #000;
+}
+
+#nav li a::after { 
+    content: "|";
+    padding-left: 5px;
+    opacity: 0;
+    color: rgb(131,222,207);
+}
+
+#nav li a::before { 
+    content: "|";
+    padding-right: 5px;
+    opacity: 0;
+    color: rgb(131,222,207);
+}
+
+.selected{
+  color: rgb(131,222,207);
+  font-family: 'DINBol';
+}
+
+#nav li .selected::after { 
+    opacity: 1
+}
+
+#nav li .selected::before { 
+    opacity: 1
+}
+
+.slideCopy {
+  position: absolute;
+  display: block;
+  z-index: 99;
+  display: none;
+}
+.slideCopy h2 {
+  font-size: 38px;
+  letter-spacing: -1px;
+  color: #FFF;
+  margin: 0;
+  font-weight: normal;
   margin-bottom: 10px;
-  color: $green;
- 
-  @media (max-width: 700px) {
-    font-size: 2.2em;
-  }
 }
- 
-h2 {
-  font-size: 1.5em;
-  color: $purple;
+.slideCopy span {
+  color: #FFF;
+  font-size: 15px;
+  letter-spacing: 0px;
+  font-family: 'Didot-Italic';
 }
- 
-p {
-  font-size: 1.3em;
-  line-height: 1.5em;
-    color: $purple;
-  margin-bottom: 20px;
-    margin-top: 15px;
+.readMore {
+  margin-top: 15px;
 }
- 
-section {
-  padding: 20px 0;
+.readMore a {
+  background: url(readMore.jpg)no-repeat;
+  width: 80px;
+  height: 20px;
+  font-family: 'DINMed';
+  font-size: 12px;
+  text-decoration: none;
+  display: inline-block;
+  color: black;
+  line-height: 23px;
 }
- 
-.artgroup {
-    @include clearfix;
-} //artgroup
+
+
+/* FOOTER */
+#footer {
+  position: fixed;
+  bottom: 0px;
+  display: block;
+  background-color: white;
+  width: 100%;
+  height: 35px;
+  z-index: 999;
+}
+#footer p {
+  font-size: 11px;
+  padding-left: 20px;
+  line-height: 35px;
+  margin: 0;
+  padding-left: 10px;
+}
+#footer span {
+  float: right;
+  padding-right: 10px;
+  padding-top: 5px;
+}
+
+#step02, #step03{
+  display: none;
+}
